@@ -7,7 +7,7 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class ClientRequestDTO {
+public class ClientDTO {
 
     @NotEmpty(message = "The field 'cpf' cannot be empty/null")
     @CPF
@@ -26,14 +26,7 @@ public class ClientRequestDTO {
     @DateTimeFormat(pattern = "yyyy-MM-DD")
     private LocalDate birthday;
 
-    public ClientRequestDTO() {
-    }
-
-    public ClientRequestDTO(@NotEmpty(message = "The field 'cpf' cannot be empty/null") @CPF String cpf, @NotEmpty(message = "The field 'name' cannot be empty/null") String name, @NotEmpty(message = "The field 'email' cannot be empty/null") @Email(message = "The field 'email' should be valid") String email, @NotEmpty(message = "The field 'birthday' cannot be empty/null") @Past LocalDate birthday) {
-        this.cpf = cpf;
-        this.name = name;
-        this.email = email;
-        this.birthday = birthday;
+    public ClientDTO() {
     }
 
     public String getCpf() {
@@ -66,5 +59,15 @@ public class ClientRequestDTO {
 
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
+    }
+
+    @Override
+    public String toString() {
+        return "ClientDTO{" +
+                "cpf='" + cpf + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", birthday=" + birthday +
+                '}';
     }
 }

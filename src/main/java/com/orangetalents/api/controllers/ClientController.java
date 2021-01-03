@@ -1,6 +1,6 @@
 package com.orangetalents.api.controllers;
 
-import com.orangetalents.api.dto.ClientRequestDTO;
+import com.orangetalents.api.dto.ClientDTO;
 import com.orangetalents.api.services.ClientService;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class ClientController {
     }
 
     @PostMapping
-    public ResponseEntity<ClientRequestDTO> create(@RequestBody @Valid ClientRequestDTO clientRequestDTO) {
-        return new ResponseEntity<>(clientService.create(clientRequestDTO), HttpStatus.CREATED);
+    public ResponseEntity<ClientDTO> create(@RequestBody @Valid ClientDTO clientDTO) {
+        return new ResponseEntity<>(clientService.create(clientDTO), HttpStatus.CREATED);
     }
 }

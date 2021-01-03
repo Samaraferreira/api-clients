@@ -1,7 +1,7 @@
 package com.orangetalents.api.services;
 
 import com.orangetalents.api.entities.Client;
-import com.orangetalents.api.dto.ClientRequestDTO;
+import com.orangetalents.api.dto.ClientDTO;
 import com.orangetalents.api.repositories.ClientRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,20 +18,20 @@ import static org.mockito.Mockito.*;
 public class ClientServiceTest {
 
     @Mock
-    private ClientRepository clientRepository;
+    private ClientRepository clientRepositoryMock;
 
     @InjectMocks
     private ClientService clientService;
 
     @Test
     void whenClientInformedThenItShouldBeCreated() {
-        ClientRequestDTO clientDTO = createFakeDTO();
+        ClientDTO clientToSave = createFakeDTO();
         Client expectedSavedClient = createFakeEntity();
 
-        when(clientRepository.save(any(Client.class))).thenReturn(expectedSavedClient);
+        when(clientRepositoryMock.save(any(Client.class))).thenReturn(expectedSavedClient);
 
-        ClientRequestDTO savedClientDTO = clientService.create(clientDTO);
+        ClientDTO savedClientDTO = clientService.create(clientToSave);
 
-        assertEquals(clientDTO, savedClientDTO);
+        assertEquals(clientToSave, savedClientDTO);
     }
 }

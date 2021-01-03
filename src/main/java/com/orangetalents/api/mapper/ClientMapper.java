@@ -1,8 +1,7 @@
 package com.orangetalents.api.mapper;
 
-import com.orangetalents.api.dto.ClientRequestDTO;
+import com.orangetalents.api.dto.ClientDTO;
 import com.orangetalents.api.entities.Client;
-import java.time.LocalDate;
 
 public class ClientMapper {
 
@@ -10,19 +9,19 @@ public class ClientMapper {
         return new ClientMapper();
     }
 
-    public Client entity(ClientRequestDTO clientRequestDTO) {
+    public Client entity(ClientDTO clientDTO) {
         Client client = new Client();
 
-        client.setName(clientRequestDTO.getName());
-        client.setCpf(clientRequestDTO.getCpf());
-        client.setEmail(clientRequestDTO.getEmail());
-        client.setBirthday(clientRequestDTO.getBirthday());
+        client.setName(clientDTO.getName());
+        client.setCpf(clientDTO.getCpf());
+        client.setEmail(clientDTO.getEmail());
+        client.setBirthday(clientDTO.getBirthday());
 
         return client;
     }
 
-    public ClientRequestDTO dto(Client client) {
-        ClientRequestDTO dto = new ClientRequestDTO();
+    public ClientDTO dto(Client client) {
+        ClientDTO dto = new ClientDTO();
 
         dto.setName(client.getName());
         dto.setCpf(client.getCpf());

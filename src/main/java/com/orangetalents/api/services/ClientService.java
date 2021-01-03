@@ -1,6 +1,6 @@
 package com.orangetalents.api.services;
 
-import com.orangetalents.api.dto.ClientRequestDTO;
+import com.orangetalents.api.dto.ClientDTO;
 import com.orangetalents.api.entities.Client;
 import com.orangetalents.api.mapper.ClientMapper;
 import com.orangetalents.api.repositories.ClientRepository;
@@ -21,11 +21,11 @@ public class ClientService {
     }
 
     @Transactional
-    public ClientRequestDTO create(ClientRequestDTO clientRequestDTO) {
-        Client clientToSave = clientMapper.entity(clientRequestDTO);
+    public ClientDTO create(ClientDTO clientDTO) {
+        Client clientToSave = clientMapper.entity(clientDTO);
 
         clientRepository.save(clientToSave);
 
-        return clientRequestDTO;
+        return clientDTO;
     }
 }
