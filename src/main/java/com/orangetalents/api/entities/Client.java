@@ -1,6 +1,5 @@
 package com.orangetalents.api.entities;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,11 +14,11 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false, length = 11)
-    private String cpf;
-
     @Column(nullable = false)
     private String name;
+
+    @Column(unique = true, nullable = false, length = 11)
+    private String cpf;
 
     @Column(unique = true, nullable = false)
     private String email;
@@ -28,14 +27,6 @@ public class Client {
     private LocalDate birthday;
 
     public Client() {
-    }
-
-    public Client(Long id, String cpf, String name, String email, LocalDate birthday) {
-        this.id = id;
-        this.cpf = cpf;
-        this.name = name;
-        this.email = email;
-        this.birthday = birthday;
     }
 
     public Long getId() {
