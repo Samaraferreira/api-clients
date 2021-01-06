@@ -1,6 +1,5 @@
 package com.orangetalents.api.validation.annotations;
 
-import com.orangetalents.api.validation.validations.UniqueCpfValidator;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,6 +7,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
+
+import com.orangetalents.api.validation.validators.UniqueCpfValidator;
 
 @Documented
 @Constraint(validatedBy = UniqueCpfValidator.class) // qual classe de validação iremos utilizar

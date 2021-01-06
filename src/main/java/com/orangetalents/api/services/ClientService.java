@@ -5,6 +5,7 @@ import com.orangetalents.api.entities.Client;
 import com.orangetalents.api.exceptions.ClientNotFoundException;
 import com.orangetalents.api.mapper.ClientMapper;
 import com.orangetalents.api.repositories.ClientRepository;
+import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

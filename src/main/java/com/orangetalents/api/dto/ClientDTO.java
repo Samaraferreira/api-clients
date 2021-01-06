@@ -1,16 +1,19 @@
 package com.orangetalents.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.orangetalents.api.validation.annotations.UniqueCpf;
-import com.orangetalents.api.validation.annotations.UniqueEmail;
+
 import java.io.Serializable;
 import java.time.LocalDate;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.br.CPF;
+
+import com.orangetalents.api.validation.annotations.UniqueCpf;
+import com.orangetalents.api.validation.annotations.UniqueEmail;
 
 public class ClientDTO implements Serializable {
 

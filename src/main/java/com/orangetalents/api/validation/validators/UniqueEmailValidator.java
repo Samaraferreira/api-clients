@@ -1,4 +1,4 @@
-package com.orangetalents.api.validation.validations;
+package com.orangetalents.api.validation.validators;
 
 import com.orangetalents.api.repositories.ClientRepository;
 import com.orangetalents.api.validation.annotations.UniqueEmail;

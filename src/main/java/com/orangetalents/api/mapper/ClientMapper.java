@@ -2,6 +2,7 @@ package com.orangetalents.api.mapper;
 
 import com.orangetalents.api.dto.ClientDTO;
 import com.orangetalents.api.entities.Client;
+import java.util.Optional;
 
 public class ClientMapper {
 

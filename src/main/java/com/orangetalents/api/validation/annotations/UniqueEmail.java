@@ -1,6 +1,6 @@
 package com.orangetalents.api.validation.annotations;
 
-import com.orangetalents.api.validation.validations.UniqueEmailValidator;
+import com.orangetalents.api.validation.validators.UniqueEmailValidator;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
